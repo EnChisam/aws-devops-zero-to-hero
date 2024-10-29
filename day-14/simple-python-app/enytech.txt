@@ -17,6 +17,9 @@ sudo service codedeploy-agent status
 
 sudo service codedeploy-agent restart
 
+tail -f /var/log/aws/codedeploy-agent/codedeploy-agent.log      #Inspect for errors (connection, permission or configuration) in the log file that may indicate issues.
+
+
 ========
 
 #Docker
