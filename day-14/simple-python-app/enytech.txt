@@ -1,20 +1,5 @@
-testing
+#removing running container that takes the port 5000 (same port) and prevents my new container from running.
+#!/bin/bash
 
-Successfully created the CodeBuild and CodePipeline.
-Devops am on my way!
-
-
-I tried so hard!!
-
-Na WE DEY RUN AM
-
-still trying...
-try again
-keep trying
-edited to python 3.13
-never give up
-God's willing.
-
-
-sdfghj
-port 5000 was used
+containerID=`docker ps | awk -F" " '{Print $1}'`
+docker rm -f$containerID
