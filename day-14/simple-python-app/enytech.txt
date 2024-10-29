@@ -8,8 +8,9 @@ sudo apt install ruby-full
 sudo apt install wget
 
 wget https://bucket-name.s3.region-identifier.amazonaws.com/latest/install
+sudo wget https://aws-codedeploy-eu-west-1.s3.eu-west-1.amazonaws.com/latest/install
 
-chmod +x ./install
+sudo chmod +x ./install
 
 sudo ./install auto
 
@@ -18,6 +19,10 @@ sudo service codedeploy-agent status
 sudo service codedeploy-agent restart
 
 tail -f /var/log/aws/codedeploy-agent/codedeploy-agent.log      #Inspect for errors (connection, permission or configuration) in the log file that may indicate issues.
+sudo apt-cache policy codedeploy-agent
+
+sudo apt-get remove codedeploy-agent -y
+sudo apt-get install codedeploy-agent -y
 
 
 ========
