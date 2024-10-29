@@ -1,5 +1,43 @@
+#Codedeploy
+
+#Install codedeploy agent in EC2 (Ubuntu)
+https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-ubuntu.html
+
+sudo apt install ruby-full
+
+sudo apt install wget
+
+wget https://bucket-name.s3.region-identifier.amazonaws.com/latest/install
+
+chmod +x ./install
+
+sudo ./install auto
+
+sudo service codedeploy-agent status
+
+sudo service codedeploy-agent restart
+
+========
+
+#Docker
+
+sudo systemctl restart docker  # For Linux systems
+sudo systemctl status docker  
+
+sudo docker ps     #lists running container
+
+sudo docker ps -a    #lists all containers
+
+sudo lsof -i :5000      #find out what's currently using port 5000
+sudo kill -9 <PID>       #stop the process running on that port by <PID>
+
+docker ps | grep 5000    #for docker containers
+docker stop <container_id>
+
 #removing running container that takes the port 5000 (same port) and prevents my new container from running.
 #!/bin/bash
 
 containerID=`docker ps | awk -F" " '{Print $1}'`
 docker rm -f$containerID
+
+=====
